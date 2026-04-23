@@ -75,7 +75,32 @@ public class Menu {
 
                 } break;
 
-                case 3: {
+                case 3: { /* ATUALIZAR MISSAO */
+                    int id;
+                    int opcao3 = -1;
+                    service.listarMissoes();
+                    System.out.print("ID: ");
+                    id = sc.nextInt();
+                    service.buscarPorId(id);
+                    if (service != null){
+                        do {
+                            System.out.println("1 - Alterar status\n" +
+                                    "2 - Editar dados");
+                            opcao3 = sc.nextInt();
+                            switch (opcao3) {
+                                case 1: {/* Alterar status */
+
+                                }  break;
+                                case 2: {/* Editar dados */
+
+                                }   break;
+                                default: {
+                                    System.out.println("Opcao invalida!");
+                                }
+                            }
+                        }while (opcao3 != 0);
+                    }
+
 
                 } break;
 
