@@ -108,11 +108,14 @@ public class Menu {
                             }
                         }while (opcao3 != 0);
                     }
-
-
                 } break;
 
-                case 4: {
+                case 4: {/* deletar missao */
+                    int id;
+                    service.listarMissoes();
+                    System.out.println("--------------");
+                    System.out.print("ID Missao: ");
+                    service.deletarMissao(sc.nextInt());
 
                 } break;
 

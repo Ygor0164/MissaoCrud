@@ -107,6 +107,17 @@ public class MissaoService {
         System.out.println("Missão não encontrada");
     }
 
+    public void deletarMissao(int id) {
+        for (int i = 0; i < missao.size(); i++) {
+            if (missao.get(i).getId() == id) {
+                missao.remove(i);
+                System.out.println("Missao deletada com sucesso!");
+                return;
+            }
+        }
+        System.out.println("ID inexistente.");
+    }
+
 
 
 
@@ -114,7 +125,7 @@ public class MissaoService {
 
     /* Melhorar as listas, quando nao encontra ou inexistente exibir uma mensagem. */
     /* Melhorar opcao de atualizar missao (UI) */
-    
+
 
 
 
