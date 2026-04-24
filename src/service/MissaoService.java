@@ -12,7 +12,6 @@ public class MissaoService {
             this.missao.add(missao);
         }
 
-
         public  void listarMissoes() {
             if (missao.isEmpty()) {
                 System.out.println("Nenhuma missão cadastrada.");
@@ -24,6 +23,7 @@ public class MissaoService {
                 System.out.println("Nome: " + m.getNome());
                 System.out.println("Descrição: " + m.getDescricao());
                 System.out.println("Dificuldade: " + m.getDificuldade());
+                System.out.println("Status: " + m.isStatus());
                 System.out.println("Recompensa: " + m.getRecompensa());
                 System.out.println("ID: " + m.getId());
             }
@@ -39,6 +39,7 @@ public class MissaoService {
                 System.out.println("Nome: " + m.getNome());
                 System.out.println("Descrição: " + m.getDescricao());
                 System.out.println("Dificuldade: " + m.getDificuldade());
+                System.out.println("Status: " + m.isStatus());
                 System.out.println("Recompensa: " + m.getRecompensa());
                 System.out.println("ID: " + m.getId());
                 return m;
@@ -55,6 +56,7 @@ public class MissaoService {
                 System.out.println("Nome: " + m.getNome());
                 System.out.println("Descrição: " + m.getDescricao());
                 System.out.println("Dificuldade: " + m.getDificuldade());
+                System.out.println("Status: " + m.isStatus());
                 System.out.println("Recompensa: " + m.getRecompensa());
                 System.out.println("ID: " + m.getId());
                 return m;
@@ -65,7 +67,54 @@ public class MissaoService {
         return null; // não encontrou
     }
 
+    public void atualizarStatus(int id, String novoStatus) {
+        for (Missao m : missao) {
+            if (m.getId() == id) {
+                m.setStatus(novoStatus);
+                System.out.println("Status atualizado com sucesso!");
+                System.out.println("-----");
+                System.out.println("Nome: " + m.getNome());
+                System.out.println("Descrição: " + m.getDescricao());
+                System.out.println("Dificuldade: " + m.getDificuldade());
+                System.out.println("Status: " + m.isStatus());
+                System.out.println("Recompensa: " + m.getRecompensa());
+                System.out.println("ID: " + m.getId());
+                return;
+            }
+        }
+        System.out.println("Missão não encontrada");
+    }
+
+    public void atualizarMissao(int id , String novoNome , String novoDescricao,
+                                String novoDificuldade, String novoStatus) {
+        for (Missao m : missao) {
+            if (m.getId() == id) {
+                m.setNome(novoNome);
+                m.setDescricao(novoDescricao);
+                m.setDificuldade(novoDificuldade);
+                m.setStatus(novoStatus);
+                System.out.println("Missao atualizado com sucesso!");
+                System.out.println("-----");
+                System.out.println("Nome: " + m.getNome());
+                System.out.println("Descrição: " + m.getDescricao());
+                System.out.println("Dificuldade: " + m.getDificuldade());
+                System.out.println("Status: " + m.isStatus());
+                System.out.println("Recompensa: " + m.getRecompensa());
+                System.out.println("ID: " + m.getId());
+                return;
+            }
+        }
+        System.out.println("Missão não encontrada");
+    }
+
+
+
+
+
+
     /* Melhorar as listas, quando nao encontra ou inexistente exibir uma mensagem. */
+    /* Melhorar opcao de atualizar missao (UI) */
+    
 
 
 

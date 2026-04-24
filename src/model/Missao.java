@@ -7,12 +7,14 @@ public class Missao {
     private String descricao;
     private String dificuldade;
     private int recompensa;
+    private String status;
     private int id;
 
-    public Missao(String nome, String descricao, String dificuldade, int recompensa) {
+    public Missao(String nome, String descricao, String dificuldade, String status , int recompensa) {
        this.setNome(nome);
        this.setDescricao(descricao);
        this.setDificuldade(dificuldade);
+       this.setStatus(status);
        this.setRecompensa(recompensa);
         Random random = new Random();
         this.setId(random.nextInt(90) + 10);
@@ -50,6 +52,14 @@ public class Missao {
         this.recompensa = recompensa;
     }
 
+    public String  isStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
     public int getId() {
         return id;
     }
@@ -61,10 +71,12 @@ public class Missao {
     @Override
     public String toString() {
         return "Missao{" +
-                "nome='" + this.getNome() + '\'' +
-                ", descricao='" + this.getDescricao() + '\'' +
-                ", dificuldade='" + this.getDificuldade() + '\'' +
-                ", recompensa=" + this.getRecompensa() +
+                "nome='" + nome + '\'' +
+                ", descricao='" + descricao + '\'' +
+                ", dificuldade='" + dificuldade + '\'' +
+                ", recompensa=" + recompensa +
+                ", status='" + status + '\'' +
+                ", id=" + id +
                 '}';
     }
 }

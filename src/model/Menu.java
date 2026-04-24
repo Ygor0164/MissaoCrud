@@ -32,11 +32,14 @@ public class Menu {
                     System.out.print("Dificuldade (F/M/D): ");
                     String dificuldade = sc.nextLine();
 
+                    System.out.print("Status: ");
+                    String status = sc.nextLine();
+
                     System.out.print("Recompensa (Quantidade de XP): ");
                     int recompensa = sc.nextInt();
                     sc.nextLine(); // limpar buffer
 
-                    Missao missao = new Missao(nome, descricao, dificuldade, recompensa);
+                    Missao missao = new Missao(nome, descricao, dificuldade,  status , recompensa);
 
                     service.adicionarMissao(missao);
 
@@ -51,6 +54,7 @@ public class Menu {
                         System.out.println("1 - Todas\n" +
                                 "2 - Por ID\n" +
                                 "3 - Buscar por nome");
+
                         opcao2 = sc.nextInt();
                         switch (opcao2) {
                             case 1: { /* LISTA GERAL*/
@@ -79,21 +83,25 @@ public class Menu {
                     int id;
                     int opcao3 = -1;
                     service.listarMissoes();
-                    System.out.print("ID: ");
+                    System.out.println("--------------");
+                    System.out.print("ID Missao: ");
                     id = sc.nextInt();
+
                     service.buscarPorId(id);
                     if (service != null){
                         do {
                             System.out.println("1 - Alterar status\n" +
-                                    "2 - Editar dados");
+                                    "2 - Editar dados\n" +
+                                    "0 - Sair");
                             opcao3 = sc.nextInt();
                             switch (opcao3) {
                                 case 1: {/* Alterar status */
-
+                                    service.atualizarStatus(id , sc.next());
                                 }  break;
                                 case 2: {/* Editar dados */
-
+                                    service.atualizarMissao(id , sc.next() , sc.next() , sc.next() , sc.next());
                                 }   break;
+                                case 0: break;
                                 default: {
                                     System.out.println("Opcao invalida!");
                                 }
