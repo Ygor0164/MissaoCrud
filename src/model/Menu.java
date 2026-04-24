@@ -11,7 +11,6 @@ public class Menu {
     public void Menu(){
 
         do {
-
             System.out.println("1 - Criar Missão\n" +
                     "2 - Listar Missões\n" +
                     "3 - Atualizar Missão\n" +
@@ -49,11 +48,11 @@ public class Menu {
 
                 case 2: {/* LISTAR MISSAO*/
                     int opcao2 = -1;
-
                     do {
                         System.out.println("1 - Todas\n" +
                                 "2 - Por ID\n" +
-                                "3 - Buscar por nome");
+                                "3 - Buscar por nome\n" +
+                                "0 - Sair");
 
                         opcao2 = sc.nextInt();
                         switch (opcao2) {
@@ -70,6 +69,7 @@ public class Menu {
                                 service.buscarPorName(sc.next());
 
                             }  break;
+                            case 0: break;
                             default: {
                                 System.out.println("Opcao invalida!");
                             }
@@ -119,15 +119,15 @@ public class Menu {
 
                 } break;
 
-                case 0: {
-
+                case 0: {/*Encerrar programa*/
+                    opcao = 0;
+                    System.out.println("Encerrando...");
                 } break;
 
                 default: {
                     System.out.println("Opcao invalida! ");
                 } break;
             }
-
         } while (opcao != 0);
 
     }

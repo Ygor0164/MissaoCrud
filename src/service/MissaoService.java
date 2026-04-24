@@ -43,15 +43,15 @@ public class MissaoService {
                 System.out.println("Recompensa: " + m.getRecompensa());
                 System.out.println("ID: " + m.getId());
                 return m;
-            }else {
-                System.out.println("ID inexistente.");
             }
         }
+        System.out.println("ID inexistente.");
         return null; // não encontrou
+
     }
     public Missao buscarPorName(String name) {
         for (Missao m : missao) {
-            if (m.getNome().equals(name)) {
+            if (m.getNome().equalsIgnoreCase(name)) {
                 System.out.println("-----");
                 System.out.println("Nome: " + m.getNome());
                 System.out.println("Descrição: " + m.getDescricao());
@@ -117,17 +117,4 @@ public class MissaoService {
         }
         System.out.println("ID inexistente.");
     }
-
-
-
-
-
-
-    /* Melhorar as listas, quando nao encontra ou inexistente exibir uma mensagem. */
-    /* Melhorar opcao de atualizar missao (UI) */
-
-
-
-
-
 }
